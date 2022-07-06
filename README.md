@@ -2,11 +2,11 @@
 
 ## Markdown
 
-- [Markdown](./220705_Git\Markdown\markdown.md)
+- [Markdown](./220705_Git/Markdown/markdown.md)
 
 ## Git
 
-- [Git](./220705_Git\Git.md)
+- [Git](./220705_Git/Git.md)
 
 ## GitHub
 
