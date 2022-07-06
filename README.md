@@ -10,5 +10,5 @@
 
 ## GitHub
 
-- [GitHub](./220706/Github.md)
+- [GitHub](./220706_Github/Github.md)
 
