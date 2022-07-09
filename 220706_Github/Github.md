@@ -70,5 +70,7 @@ Vim 에서 나오기 -> esc하고 :wq (리눅스와같음)
 
 [gitignore 파일 만드는 사이트](https://gitignore.io)
 
+## 참고자료
 
+- [Git Book](https://git-scm.com/book/ko/v2)
 
