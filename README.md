@@ -17,4 +17,4 @@
 
 - [Python 기초](./220711_Python/Python_기초.md)
 
-- [Python 조건문 반복문](./220712_Python_조건문/제어문(조건문, 반복문).md)
+- [Python 조건문 반복문](./220712_Python_조건문/Python_조건문_반복문.md)
