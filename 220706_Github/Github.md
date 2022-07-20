@@ -53,11 +53,11 @@ GitHub를 사용하여 버전관리와 협업을 더 효율적으로 할 수 있
 4. `$ git pull 원격저장소이름 브랜치이름`
    - 원격저장소로부터 변경된 내역을 받아와서 이력을 Merge함
 
-외부에서 다른 컴퓨터로 작업했을때 : git push, pull 생활화하기
+- 외부에서 다른 컴퓨터로 작업했을때 : git push, pull 생활화하기
 
-[git add, commit, push 취소하기](https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html)
+- [git add, commit, push 취소하기](https://gmlwjd9405.github.io/2018/05/25/git-add-cancle.html)
 
-Vim 에서 나오기 -> esc하고 :wq (리눅스와같음)
+- Vim 에서 나오기 -> esc하고 :wq (리눅스)
 
 ## .gitignore: 버전 관리 필요없는 파일 관리하기
 
