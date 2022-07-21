@@ -1,10 +1,12 @@
-## 제어문 (Control Statement)
+# 제어문 (Control Statement)
 
 - 위에서 아래로 순차적으로 명령 수행
 - 특정 상황에 따라 코드를 선택적으로 실행하거나 계속 실행하는 제어 필요
 - 제어문은 순서도(flow chart)로 표현 가능
 
-### 조건문 (Conditional Statement)
+## 조건문 (Conditional Statement)
+
+### 조건문 if else
 
 - 조건문은 True/False를 판단할 수 있는 조건식과 함께 사용
 - else에는 조건을 쓰지 않음. else는 필요에 따라 생략 가능
@@ -20,7 +22,7 @@ else:
 	print('짝수')
 ```
 
-#### 복수 조건문 elif
+### 복수 조건문 if elif
 
 - 복수의 조건식을 활용할 경우 elif 사용
 
@@ -39,7 +41,7 @@ else :
 print('미세먼지 확인 완료')
 ```
 
-#### 중첩 조건문
+### 중첩 조건문 if if else
 
 - 조건문은 다른 조건문에 중첩해 사용할 수 있음 (들여쓰기 유의)
 
@@ -65,7 +67,9 @@ else:
 print('미세먼지 확인 완료')
 ```
 
-#### 조건 표현식
+### 조건 표현식
+
+> <true인 경우 값> if <조건식> else <false인 경우 값>
 
 ```python
 ## 절대값 계산기
@@ -84,11 +88,11 @@ value = num if num >= 0 else -num
 ## elif 사용 불가
 ```
 
-### 반복문(Loop Statement)
+## 반복문(Loop Statement)
 
 > 특정 조건을 도달할 때까지, 계속 반복되는 일련의 문장
 
-#### While 문
+### while 문
 
 - 조건식이 참일 경우 반복적으로 코드 실행
 - 무한루프를 하지 않도록 종료 조건이 반드시 필요
@@ -117,7 +121,7 @@ while n < user_input:
 print(total)
 ```
 
-#### for 문
+### for 문
 
 - for문은 시퀀스(string, tuple, list, range, dic, enumerate)를 포함한 순회가능한 객체(iterable)요소를 모두 순회함
   - 처음부터 끝까지 모두 순회하므로 별도의 종료조건 필요없음
@@ -141,9 +145,7 @@ for idx in range(len(chars))
 	print(chars[idx])
 ```
 
-#### enumerate 순회
-
-- enumerate()
+- **enumerate 순회**
   - 인덱스와 객체를 쌍으로 담은 열거형(enumerate) 객체 반환
     - (index,value) 형태의 tuple로 구성된 열거 객체를 반환
 
@@ -158,9 +160,7 @@ for i, member in enumerate(members):
     print(i, member)
 ```
 
-#### 딕셔너리 순회
-
-- 딕셔너리는 기본적으로 key를 순회하며 key를 통해 값을 활용
+- **딕셔너리 순회**: 딕셔너리는 기본적으로 key를 순회하며 key를 통해 값을 활용
 
 ```python
 grades = {'john': 80, 'eric': 90}
@@ -178,9 +178,9 @@ for name in grades:
 # eric 90
 ```
 
-#### 반복문 제어
+### 반복문 제어
 
-- break
+- **break**
   - 반복문 종료
 
 ```python
@@ -208,7 +208,7 @@ for i in range(10):
 # 0과 1만 필요해!
 ```
 
-- continue
+- **continue**
   - continue 이후의 코드블록은 수행하지 않고, 다음 반복을 수행
 
 ```python
@@ -222,7 +222,7 @@ for i in range(6):
 # 5
 ```
 
-- for - else
+- **for - else**
   - 끝까지 반복문을 실행한 이후 else문 실행
     - break를 통해 중간에 종료되는 경우 else문은 실행되지 않음
 
@@ -247,8 +247,6 @@ else:
     
 # b!
 ```
-
-
 
 ## 참고 자료
 

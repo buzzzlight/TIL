@@ -1,10 +1,6 @@
-## 함수
+# 함수 (Function)
 
-### 변수와 타입
-
-int float complex bool str list tuple range set dicitonary none
-
-### 함수를 왜 사용할까
+## 함수를 왜 사용할까
 
 - Decomposition
   - 기능을 분해, 재사용 가능
@@ -13,23 +9,30 @@ int float complex bool str list tuple range set dicitonary none
   - 복잡한 내용을 숨기고 기능에 집중하여 사용할 수 있음 (블랙박스)
   - 재사용성, 가독성, 생산성
 
-### 함수의 정의
+## 함수의 정의
 
-> 특정한 기능을 하는 코드의 조각(묶음)
->
-> 특정 명령을 수행하는 코드를 매번 다시 작성하지 않고 필요 시 호출하여 사용
+> 특정한 기능을 하는 코드의 조각(묶음), 특정 명령을 수행하는 코드를 매번 다시 작성하지 않고 필요 시 호출하여 사용
 
-### 사용자 함수 (Custom Function)
+- 함수를 왜 사용할까
+  - Decomposition
+    - 기능을 분해, 재사용 가능
+  - Abstraction
+    - 복잡한 내용을 숨기고 기능에 집중하여 사용할 수 있음 (블랙박스)
+    - 재사용성, 가독성, 생산성
+
+## 사용자 함수 (Custom Function)
 
 - 구현되어 있는 함수가 없는 경우, 사용자가 직접 함수 작성 가능
 
 ```python
-def 
+def name(parameters)
+	#코드 내용
+    return
 ```
 
-#### 함수 기본 구조
+### 함수 기본 구조
 
-##### 선언과 호출
+#### 선언과 호출
 
 - 함수의 선언은 def 활용
 - 들여쓰기를 통해 Function body 작성
@@ -40,7 +43,7 @@ def
 - 함수는 함수명()으로 호출
   - parameter가 있는 경우 함수명(값)으로 호출
 
-##### 함수의 결과값 (Output)
+#### 함수의 결과값 (Output)
 
 - return
 
@@ -59,10 +62,10 @@ def
   ## (1,2) <class 'tuple'>
   ```
 
-##### 함수의 입력 (Input)
+#### 함수의 입력 (Input)
 
-- Parameter : 함수를 실행할 때, 함수 내부에서 사용되는 식별자
-- Argument : 함수를 호출 할 때, 넣어주는 값
+- Parameter : 함수를 실행할 때 함수 내부에서 사용되는 식별자
+- Argument : 함수를 호출 시 함수의 parameter를 통해 전달되는 값
 
 ```python
 def function(ham): # parameter : ham
@@ -78,15 +81,15 @@ def add(x, y=0)
 	return add
 ```
 
-##### 함수의 범위 (scope)
+#### 함수의 범위 (scope)
 
-- 함수는 코드
+- 함수는 코드 내부에 local scope을 생성하며 그 외의 공간인 global scope로 구분
 
 - Name
 
-함수 응용
+#### 함수 응용
 
-- `map(function iterable)`
+- `map(function, iterable)`
 
   - 순회 가능한 데이터구조(iterable)의 모든 요소에 함수 적용하고 그 결과를 map object로 반환
 
@@ -118,6 +121,8 @@ def add(x, y=0)
   ```
 
 - `statistics.pstdev()` : 표준편자 구하는 함수
+
+## 참고자료
 
 [파이썬 표준 라이브러리](https://docs.python.org/ko/3/library/index.html)
 
