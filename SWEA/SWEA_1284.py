@@ -37,4 +37,16 @@ for test_case in range(1, T + 1):
         print(f'#{test_case} {b}')
     else:
         print(f'#{test_case} {a}')
-    
+
+# min함수 쓰기
+
+T = int(input())
+
+for test_case in range(1, T + 1):
+    P, Q, R, S, W = map(int, input().split())
+    A = W * P
+    B = Q if W < R else Q + (W - R) * S
+
+    if W > R:
+        b = Q + (W - R) * S
+    print(f'#{test_case} {min(A, b)}')
