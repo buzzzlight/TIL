@@ -18,7 +18,8 @@
 - [Python 기초](./Python/00_Python_기초.md)
 - [조건문/반복문](./Python/01_Python_조건문_반복문.md)
 - [함수](./Python/02_Python_함수.md)
-- [메서드](./Python/03_Python_메서드.md)
+- [메소드](./Python/03_Python_메소드.md)
 - [에러/예외처리](./Python/04_Python_에러_예외처리.md)
+- [객체지향 프로그래밍](./Python/05_Python_oop.md)
 - [실습문제](./Python_practice)
 
