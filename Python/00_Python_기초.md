@@ -151,7 +151,7 @@ type(name)
 - `bool()` 함수
 - 0, 0.0, (), []. {}, ", None 을 False로 변환
 
-![pimg6217_1](Python_기초.assets/pimg6217_1-16577896114271.png)
+![pimg6217_1-16577896114271](00_Python_기초.assets/pimg6217_1-16577896114271.png)
 
 이미지 출처- CodeUp
 
