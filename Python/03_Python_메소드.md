@@ -24,7 +24,7 @@ print('apple'.find('k'))
 ```python
 print('apple'.index('p'))
 # 1
-'apple'.index('k')
+print('apple'.index('k'))
 #ValueError Traceback (most recent call last)
 #--------> 1 apple'.index ('k')
 #ValueError : substring not found

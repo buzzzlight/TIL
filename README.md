@@ -31,8 +31,8 @@
 - [시간 복잡도](./Algorithm/02_time_complexity.md)
 - 데이터구조
   - [리스트](./Algorithm/03_list.md)
-  - 문자열
-  - 딕셔너리
+  - [문자열](./Algorithm/04_string.md)
+  - [딕셔너리](./Algorithm/05_dictionary.md)
 
 ## 참고 자료
 
@@ -45,4 +45,3 @@
 - [PEP8 코드 작성 가이드](https://zerosheepmoo.github.io/pep8-in-korean/doc/whitespace-in-expressions-and-statements.html#%E1%84%83%E1%85%A1%E1%84%85%E1%85%B3%E1%86%AB-%E1%84%80%E1%85%AF%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%BC)
 
 - [Git Book](https://git-scm.com/book/ko/v2)
-
