@@ -146,7 +146,7 @@ list(result) # 리스트 형변환을 통해 결과 직접 확인
 # [1, 3] 
 ```
 
-# 파이썬 모듈 추가내용
+# Python 모듈 추가내용
 
 ## Python Standard Library
 

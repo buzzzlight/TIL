@@ -25,6 +25,15 @@
 - [추가 문법](./Python/07_Python_추가내용.md)
 - [실습문제](./Python_practice)
 
+## Algorithm
+
+- [입력과 출력](./Algorithm/01_Algorithm.md)
+- [시간 복잡도](./Algorithm/02_time_complexity.md)
+- 데이터구조
+  - [리스트](./Algorithm/03_list.md)
+  - 문자열
+  - 딕셔너리
+
 ## 참고 자료
 
 - [Python Tutor](https://pythontutor.com/)
