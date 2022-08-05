@@ -33,6 +33,9 @@
   - [리스트](./Algorithm/03_list.md)
   - [문자열](./Algorithm/04_string.md)
   - [딕셔너리](./Algorithm/05_dictionary.md)
+  - [스택, 큐](./Algorithm/06_stack_queue.md)
+  - [힙, 셋](./Algorithm/07_heap_set.md)
+- [이차원 리스트](./Algorithm/08_matrix.md)
 
 ## 참고 자료
 
