@@ -36,6 +36,9 @@
   - [스택, 큐](./Algorithm/06_stack_queue.md)
   - [힙, 셋](./Algorithm/07_heap_set.md)
 - [이차원 리스트](./Algorithm/08_matrix.md)
+- [완전탐색](./Algorithm/09_Exhaustive_Search.md)
+- [그래프](./Algorithm/10_graph.md)
+- [DFS, BFS](./Algorithm/11_DFS.md)
 
 ## 참고 자료
 
