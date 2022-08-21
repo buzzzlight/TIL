@@ -23,7 +23,7 @@
 - [객체지향 프로그래밍](./Python/05_Python_oop.md)
 - [클래스](./Python/06_Python_Class.md)
 - [추가 문법](./Python/07_Python_추가내용.md)
-- [실습문제](./Python_practice)
+- [실습문제](./Python/Python_practice)
 
 ## Algorithm
 
@@ -42,7 +42,22 @@
 
 ## Database
 
+- [DB 기초](./Database/00_database_기초.md)
+- [SQL 기초](./Database/01_sql_기초.md)
+  - 테이블 생성 및 삭제
+  - CRUD
+- [SQL 문법](./Database/02_sql_문법.md)
+  - WHERE
+  - 연산자
+  - 집계함수
+  - AS / GROUP BY / HAVING
+  - SELECT 문장 실행 순서
+  - ALTER TABLE
+  - CASE
 
+
+- [서브쿼리](./Database/03_서브쿼리.md)
+- [실습문제](./Database/Database_practice)
 
 ## 참고 자료
 
