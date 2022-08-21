@@ -54,19 +54,13 @@
   - SELECT 문장 실행 순서
   - ALTER TABLE
   - CASE
-
-
 - [서브쿼리](./Database/03_서브쿼리.md)
 - [실습문제](./Database/Database_practice)
 
 ## 참고 자료
 
 - [Python Tutor](https://pythontutor.com/)
-
 - [파이썬 표준 라이브러리](https://docs.python.org/ko/3/library/index.html)
-
 - [파이썬 자습서](https://docs.python.org/ko/3/tutorial/index.html)
-
 - [PEP8 코드 작성 가이드](https://zerosheepmoo.github.io/pep8-in-korean/doc/whitespace-in-expressions-and-statements.html#%E1%84%83%E1%85%A1%E1%84%85%E1%85%B3%E1%86%AB-%E1%84%80%E1%85%AF%E1%86%AB%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%89%E1%85%A1%E1%84%92%E1%85%A1%E1%86%BC)
-
 - [Git Book](https://git-scm.com/book/ko/v2)
