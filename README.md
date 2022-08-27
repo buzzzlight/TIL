@@ -56,6 +56,8 @@
   - CASE
 - [서브쿼리](./Database/03_서브쿼리.md)
 - [JOIN](./Database/04_Join.md)
+- [ERD](./Database/05_ERD.md)
+- [ORM](./Database/06_ORM.md)
 - [실습문제](./Database/Database_practice)
 
 ## 참고 자료
