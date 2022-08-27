@@ -57,7 +57,6 @@
 - [서브쿼리](./Database/03_서브쿼리.md)
 - [JOIN](./Database/04_Join.md)
 - [실습문제](./Database/Database_practice)
-- 
 
 ## 참고 자료
 
