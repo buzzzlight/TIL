@@ -1,0 +1,36 @@
+/* 아래에 CSS를 작성해주세요. */
+/* 아래에 CSS를 작성해주세요. */
+  .font1, .font2, .font3, .font4 {
+    padding-left: 10px;
+    padding-top: 1px;
+  }
+  .font1 {
+    font-size: 11px;
+    color: #969696;
+  }
+  .font2 {
+    margin-top: 2px;
+    font-size: 14px;
+    margin-bottom: 1px;
+  }
+  .font3 {
+    margin-top: 0px;
+    font-size: 19px;
+    margin-bottom: 0px;
+  }
+  .font4 {
+    margin-top: 2px;
+    font-size: 14px;
+  }
+.container {
+    width: 300px;
+    margin-top: 40px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+.image {
+    width: 300px;
+    border-radius: 5px;
+}
