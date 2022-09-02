@@ -60,6 +60,12 @@
 - [ORM](./Database/06_ORM.md)
 - [실습문제](./Database/Database_practice)
 
+## Web
+
+### HTML
+
+### CSS
+
 ## 참고 자료
 
 - [Python Tutor](https://pythontutor.com/)
