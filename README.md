@@ -62,9 +62,10 @@
 
 ## Web
 
-### HTML
-
-### CSS     
+- [Web]((./HTML_CSS/01_Web.md))
+- [HTML](./HTML_CSS/02_HTML.md)
+- CSS
+- [실습](./HTML_CSS/HTML_CSS_practice)
 
 ## 참고 자료
 
