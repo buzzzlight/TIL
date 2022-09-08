@@ -15,8 +15,8 @@
     <h1 class="text-center">회원 가입</h1>
     <div class="mb-3">
       <label for="exampleForm" class="form-label">이메일</label>
-      <input type="email" class="form-control" id="exampleForm" placeholder="name@example.com">
-      <p class="mt-1 fw-light text-dark text-opacity-75">가입시 활용할 이메일 주소를 작성해주세요.</p>
+      <input type="email" class="form-control" id="exampleForm" placeholder="name@example.com" aria-describedby="emailHelp" required autofocus>
+      <div id="emailHelp" class="form-text">가입시 활용할 이메일 주소를 작성해주세요.</div>
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">비밀번호</label>
@@ -24,12 +24,12 @@
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">비밀번호 확인</label>
-      <input type="password" class="form-control" name="password" id="password" >
-      <p class="mt-1 fw-light text-dark text-opacity-75">비밀번호를 동일하게 작성해주세요.</p>
+      <input type="password" class="form-control" name="password" id="password" aria-describedby="check-password" required>
+      <div id="check-password" class="form-text">가입시 활용할 이메일 주소를 작성해주세요.</div>
     </div>
     <div class="mb-3">
       <label for="inputGroupFile02" class="form-label">프로필 사진</label>
-      <input type="file" class="form-control" name="profile" id="inputGroupFile02">
+      <input type="file" class="form-control" name="profile" id="inputGroupFile02" accept="image/png, image/jpeg">
     </div>
     <div class="form-check">
       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
