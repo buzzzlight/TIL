@@ -64,7 +64,7 @@
 
 - [Web]((./HTML_CSS/01_Web.md))
 - [HTML](./HTML_CSS/02_HTML.md)
-  - 시맨틱 태그(./HTML_CSS/05_Semantic_Tags.md)
+  - [시맨틱 태그](./HTML_CSS/05_Semantic_Tags.md)
 - [CSS](./HTML_CSS/03_CSS.md)
   - [Flex](./HTML_CSS/04_CSS_flex.md)
 - [실습](./HTML_CSS/HTML_CSS_practice)
