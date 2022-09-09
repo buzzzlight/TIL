@@ -64,7 +64,7 @@
 
 - [Web]((./HTML_CSS/01_Web.md))
 - [HTML](./HTML_CSS/02_HTML.md)
-- CSS
+- [CSS](./HTML_CSS/03_CSS.md)
 - [실습](./HTML_CSS/HTML_CSS_practice)
 
 ## 참고 자료
