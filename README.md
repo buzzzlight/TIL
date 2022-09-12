@@ -60,7 +60,7 @@
 - [ORM](./Database/06_ORM.md)
 - [실습문제](./Database/Database_practice)
 
-## Web
+## Web 
 
 - [Web]((./HTML_CSS/01_Web.md))
 - [HTML](./HTML_CSS/02_HTML.md)
