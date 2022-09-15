@@ -64,15 +64,15 @@
 
 - [Web]((./HTML_CSS/01_Web.md))
 - [HTML](./HTML_CSS/02_HTML.md)
-<<<<<<< HEAD
-  - [시맨틱 태그](./HTML_CSS/05_Semantic_Tags)
+- [시맨틱 태그](./HTML_CSS/05_Semantic_Tags)
 
-=======
-  - [시맨틱 태그](./HTML_CSS/05_Semantic_Tags.md)
->>>>>>> 27e159c2a8b0013f5792bcb2ad4c8fc06bb31874
 - [CSS](./HTML_CSS/03_CSS.md)
   - [Flex](./HTML_CSS/04_CSS_flex.md)
 - [실습](./HTML_CSS/HTML_CSS_practice)
+
+## Javascript
+
+- [JS 기초](./JavaScript/01_JavaScript_기초.md)
 
 ## 참고 자료
 
