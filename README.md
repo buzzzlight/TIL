@@ -69,7 +69,7 @@
   - [Flex](./HTML_CSS/04_CSS_flex.md)
 - [실습](./HTML_CSS/HTML_CSS_practice)
 
-## JavaScript
+## JavaScript 
 
 - [JS 기초](./JavaScript/01_JavaScript_기초.md)
 
