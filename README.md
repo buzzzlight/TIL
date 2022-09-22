@@ -73,6 +73,10 @@
 
 - [JS 기초](./JavaScript/01_JavaScript_기초.md)
 
+## Django
+
+- Django 개발 환경설정
+
 ## 참고 자료
 
 - [Python Tutor](https://pythontutor.com/)
