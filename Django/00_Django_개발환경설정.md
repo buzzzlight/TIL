@@ -12,16 +12,16 @@ $ source [가상환경이름]/Scripts/activate
 ```bash
 $ cd ~
 
-$ mkdir server  <- 가상환경을 실행할 폴더 만들기
+$ mkdir server # 가상환경을 실행할 폴더 만들기
 
 $ cd server/
 
-$ python -m venv server-venv  <- 가상환경 생성
+$ python -m venv server-venv # 가상환경 생성
 
-$ source server-venv/Scripts/activate  <- 가상환경 acivate
+$ source server-venv/Scripts/activate # 가상환경 acivate
 (server-venv)
 
-$ pip list  <- 설치된 리스트 조회
+$ pip list # 설치된 리스트 조회
 Package    Version
 ---------- -------
 pip        22.0.4
@@ -50,7 +50,7 @@ $ ls
 firstpjt/  manage.py*  server-venv/
 (server-venv)
 
-$ code .  <- VScode 실행
+$ code . # VScode 실행
 (server-venv)
 ```
 
