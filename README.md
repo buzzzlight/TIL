@@ -73,7 +73,7 @@
 
 - [JS 기초](./JavaScript/01_JavaScript_기초.md)
 
-## Django 
+## Django
 
 - [Django 개발 환경 설정](./Django/00_Django_개발환경설정.md)
 
