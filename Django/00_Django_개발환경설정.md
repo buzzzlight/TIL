@@ -95,3 +95,13 @@ $ sudo rm -rf [가상환경이름]
 ```bash
 $ deactivate
 ```
+
+- 데이터
+
+```bash
+# models.py 등록
+
+$ python manage.py makemigrations
+$ python manage.py migrate
+```
+
