@@ -80,7 +80,7 @@
 - [Design Pattern](./Django/Design_Pattern.md)
 - [ModelForm](./Django/ModelForm.md)
 
-## 참고 자료
+## 참고 자료 
 
 - [Python Tutor](https://pythontutor.com/)
 - [파이썬 표준 라이브러리](https://docs.python.org/ko/3/library/index.html)
