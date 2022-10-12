@@ -79,6 +79,7 @@
 - [Namespace](./Django/Namespace.md)
 - [Design Pattern](./Django/Design_Pattern.md)
 - [ModelForm](./Django/ModelForm.md)
+- [Cookie and Session](./Django/cookie.md)
 
 ## 참고 자료 
 
