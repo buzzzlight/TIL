@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+<div class="container mt-5">
+  <h1 class="mb-3">{{ user.username }}님의 프로필</h1>
+  <div>
+    <h3>회원 정보</h3>
+    <p>ID : {{ user.username }}</p>
+    <p>이름 : {{ user.full_name }}</p>
+    <p>이메일 : {{ user.emial }}</p>
+  </div>
+  <!-- <div>
+    <h3>작성한 글</h3>
+  </div>
+  <div>
+    <h3>작성한 댓글</h3>
+  </div> -->
+  <a href="{% url 'accounts:update' %}">
+    <button type="button" class="btn btn-outline-primary">회원정보 수정</button>
+  </a>
+</div>
+
+{% endblock content %}
