@@ -3,23 +3,22 @@
 
 {% block content %}
 
-<div class="container mt-5">
-  <h1 class="mb-3">{{ user.username }}님의 프로필</h1>
-  <div>
-    <h3>회원 정보</h3>
-    <p>ID : {{ user.username }}</p>
-    <p>이름 : {{ user.full_name }}</p>
-    <p>이메일 : {{ user.emial }}</p>
+  <div class="container my-5">
+    <h1 class="mb-3">{{ user.username }}님의 회원정보</h1>
+    <div>
+      <h5 class="mb-3">ID :
+        {{ user.username }}</h5>
+      <h5 class="mb-3">이름 :
+        {{ user.full_name }}</h5>
+      <h5 class="mb-3">이메일 :
+        {{ user.email }}</h5>
+    </div>
+    {% if request.user == user %}
+      <a href="{% url 'accounts:update' %}" class="btn btn-outline-primary">프로필 수정</a>
+    {% else %}
+      <a href="{% url 'accounts:update' %}" class="btn btn-outline-primary disabled">프로필 수정</a>
+    {% endif %}
+    <a href="{% url 'main' %}" class="btn btn-outline-secondary">HOME</a>
   </div>
-  <!-- <div>
-    <h3>작성한 글</h3>
-  </div>
-  <div>
-    <h3>작성한 댓글</h3>
-  </div> -->
-  <a href="{% url 'accounts:update' %}">
-    <button type="button" class="btn btn-outline-primary">회원정보 수정</button>
-  </a>
-</div>
 
 {% endblock content %}

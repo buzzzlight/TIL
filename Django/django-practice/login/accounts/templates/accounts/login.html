@@ -8,6 +8,7 @@
     {% csrf_token %}
     {% bootstrap_form form %}
     {% bootstrap_button button_type="submit" content="OK" %}
+    <a href="{% url 'main' %}" class="btn btn-outline-secondary">HOME</a>
   </form>
 </div>
 {% endblock content %}

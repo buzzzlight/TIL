@@ -28,7 +28,7 @@
         </button> -->
         <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="{% url 'accounts:index' %}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'main' %}">Home</a>
             <a class="nav-link" href="{% url 'articles:index' %}">영화 게시판</a>
             <a class="nav-link" href="#">취미 게시판</a>
           </div>
@@ -36,7 +36,8 @@
             {% if request.user.is_authenticated %}
             <div class="d-flex justify-content-center">
               <p class="my-auto mx-2">{{ request.user }}님</p>
-              <a href="{% url 'accounts:detail' user.pk %}" class="my-auto mx-2">마이페이지</a>
+              <a href="{% url 'articles:create' %}" class="my-auto mx-2">글쓰기</a>
+              <a href="{% url 'accounts:mypage' %}" class="my-auto mx-2">마이페이지</a>
               <a href="{% url 'accounts:logout' %}" class="my-auto mx-2">로그아웃</a>
             </div>
             {% else %}
