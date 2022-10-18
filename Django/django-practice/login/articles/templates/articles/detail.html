@@ -96,6 +96,7 @@
         </div>
         <div class="bg-white p-3 mb-4" style="border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
           <p>{{ article.content }}</p>
+          <img src="{{ article.image.url }}" alt="{{ article.image }}">
         </div>
         {% if article.user == article.user %}
           <form action="{% url 'articles:delete' article.pk %}" method="POST" class="form">

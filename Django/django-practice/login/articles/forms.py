@@ -9,6 +9,7 @@ class ArticlesForm(forms.ModelForm):
             "title",
             "content",
             "movie_name",
+            "image",
         ]
         labels = {
             "title": "리뷰 제목",

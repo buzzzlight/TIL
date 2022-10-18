@@ -23,19 +23,23 @@ def detail(request, pk):
 @login_required
 def create(request):
     if request.method == "POST":
-        form = ArticlesForm(request.POST)
-        if request.POST.get("grade") == "":
-            grade = 0
-        else:
-            grade = float(request.POST.get("grade"))
-        if form.is_valid() and 0 <= grade <= 5:
-            Articles.objects.create(
-                title=form.data.get("title"),
-                content=form.data.get("content"),
-                movie_name=form.data.get("movie_name"),
-                grade=grade,
-                user=request.user,
-            )
+        form = ArticlesForm(request.POST, request.FILES)
+        print(request.FILES)
+        # if request.POST.get("grade") == "":
+        #     grade = 0
+        # else:
+        #     grade = float(request.POST.get("grade")) and 0 <= grade <= 5:
+        if form.is_valid():
+            # Articles.objects.create(
+            #     title=form.data.get("title"),
+            #     content=form.data.get("content"),
+            #     movie_name=form.data.get("movie_name"),
+            #     grade=grade,
+            #     user=request.user,
+            # )
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
             return redirect("articles:index")
     else:
         form = ArticlesForm()
