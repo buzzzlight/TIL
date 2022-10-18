@@ -93,13 +93,15 @@
               수정
             </p>
           </div>
+          <div>
+            <hr>
+            <p>{{ article.content }}</p>
+            {% if article.image %}
+              <img src="{{ article.image.url }}" alt="{{ article.image }}">
+            {% endif %}
+          </div>
         </div>
-        <div class="bg-white p-3 mb-4" style="border-radius: 1rem; box-shadow: 2px 3px 7px rgba(0, 0, 0, 0.493);">
-          <p>{{ article.content }}</p>
-          {% if article.image %}
-            <img src="{{ article.image.url }}" alt="{{ article.image }}">
-          {% endif %}
-        </div>
+        <div class='d-flex justify-content-end'>
         {% if article.user == article.user %}
           <form action="{% url 'articles:delete' article.pk %}" method="POST" class="form">
             {% csrf_token %}
@@ -126,6 +128,7 @@
             <a href="{% url 'articles:index' %}" class="btn btn-outline-secondary">뒤로</a>
           </div>
         {% endif %}
+        </div>
       </div>
     </div>
   </div>

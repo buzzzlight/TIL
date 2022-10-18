@@ -12,6 +12,6 @@ class Articles(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.PROTECT)
-    image = ProcessedImageField(upload_to='images/', blank=True,
+    image = ProcessedImageField(upload_to='images/', blank=True, null=True,
                                 processors=[ResizeToFill(400, 300)],
                                 format='JPEG', options={'quality': 90})

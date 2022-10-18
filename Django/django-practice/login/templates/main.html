@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h1 class="text-center my-3">메인</h1>
-  {% if request.user.is_authenticated %}
-    <div class="fs-5 text-center my-3">
-      <a href="{% url 'accounts:mypage' %}">{{ request.user }}({{ request.user.full_name }})</a>님, 환영합니다.
-    </div>
-  {% endif %}
-  <div class="p-4">
-    <div class="row justify-content-center mb-3">
-      <div class="col-12 col-md-8 col-lg-4">
-        <a class="btn btn-primary form-control" href="{% url 'accounts:index' %}">회원 목록</a>
+  <div class="container my-5">
+    <div class="row">
+      {% for article in articles %}
+      <div class="col-4 mb-3">
+        {% comment %} 이미지 있는 글만 보이게 {% endcomment %}
+        {% if article.image %}
+        <div class="card" style="width: 18rem;">
+          <a href="{% url 'articles:detail' article.pk %}"><img src="{{ article.image.url }}" class="card-img-top" alt="..."></a>
+          <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text">Some quick example text to build on th</p>
+          </div>
+        </div>
+        {% endif %}
       </div>
-    </div>
-    <div class="row justify-content-center mb-3">
-      <div class="col-12 col-md-8 col-lg-4">
-        <a class="btn btn-primary form-control" href="{% url 'articles:index' %}">리뷰 목록</a>
-      </div>
+      {% endfor %}
     </div>
   </div>
 {% endblock content %}
