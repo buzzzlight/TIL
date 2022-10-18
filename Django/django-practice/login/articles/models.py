@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model  # from accounts.models import User
+from imagekit.models import ProcessedImageField
+from imagekit.processors import ResizeToFill
 
 # Create your models here.
 class Articles(models.Model):
@@ -10,4 +12,6 @@ class Articles(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(get_user_model(), on_delete=models.PROTECT)
-    image = models.ImageField(upload_to='images/', blank=True)
+    image = ProcessedImageField(upload_to='images/', blank=True,
+                                processors=[ResizeToFill(400, 300)],
+                                format='JPEG', options={'quality': 90})

@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'articles',
     'django_bootstrap5',
     'django_extensions',
+    'imagekit',
     'django.contrib.admin', # 관리자
     'django.contrib.auth', # 유저/권한/인증
     'django.contrib.contenttypes',
