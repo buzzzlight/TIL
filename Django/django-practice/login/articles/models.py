@@ -15,3 +15,10 @@ class Articles(models.Model):
     image = ProcessedImageField(upload_to='images/', blank=True, null=True,
                                 processors=[ResizeToFill(400, 300)],
                                 format='JPEG', options={'quality': 90})
+
+
+class Comment(models.Model):
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    content = models.TextField()
+    article = models.ForeignKey(Articles, on_delete=models.CASCADE)

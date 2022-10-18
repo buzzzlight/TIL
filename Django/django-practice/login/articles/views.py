@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import ArticlesForm
 from .models import Articles
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -39,6 +40,7 @@ def create(request):
             post = form.save(commit=False)
             post.user = request.user
             post.save()
+            messages.success(request, '글 작성 완료')
             return redirect("articles:index")
     else:
         form = ArticlesForm()
