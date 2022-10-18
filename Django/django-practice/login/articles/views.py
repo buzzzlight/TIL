@@ -24,7 +24,6 @@ def detail(request, pk):
 def create(request):
     if request.method == "POST":
         form = ArticlesForm(request.POST, request.FILES)
-        print(request.FILES)
         # if request.POST.get("grade") == "":
         #     grade = 0
         # else:
@@ -52,30 +51,29 @@ def create(request):
 @login_required
 def update(request, pk):
     article = Articles.objects.get(pk=pk)
-
     if request.user != article.user:
         return redirect("articles:index")
-
     if request.method == "POST":
-        form = ArticlesForm(request.POST, instance=article)
+        form = ArticlesForm(request.POST, request.FILES, instance=article)
         if request.POST.get("grade") == "":
             grade = 0
         else:
             grade = float(request.POST.get("grade"))
         if form.is_valid() and 0 <= grade <= 5:
-            article.title = form.data.get("title")
-            article.content = form.data.get("content")
-            article.movie_name = form.data.get("movie_name")
-            article.grade = grade
-            article.save()
+            # article.title = form.data.get("title")
+            # article.content = form.data.get("content")
+            # article.movie_name = form.data.get("movie_name")
+            # article.grade = grade
+            # article.image = form.data.get("image")
+            form.save()
             return redirect("articles:detail", pk)
     else:
         form = ArticlesForm(instance=article)
     context = {
         "form": form,
-        "grade": article.grade,
+        # "grade": article.grade,
     }
-    return render(request, "articles/update.html", context)
+    return render(request, "articles/create.html", context)
 
 
 @login_required
