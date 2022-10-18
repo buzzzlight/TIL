@@ -17,6 +17,7 @@ def detail(request, pk):
     article = Articles.objects.get(pk=pk)
     context = {
         "article": article,
+        'comments': article.comment_set.all(),
     }
     return render(request, "articles/detail.html", context)
 
