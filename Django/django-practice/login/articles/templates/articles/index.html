@@ -21,7 +21,8 @@
         <tbody>
             {% for article in articles %}
             <tr>
-                <th scope="row" class="align-middle col-md-1">{{ article.pk }}</td>
+                {% comment %} <th scope="row" class="align-middle col-md-1">{{ article.pk }}</td> {% endcomment %}
+                <th scope="row" class="align-middle col-md-1">{{ forloop.revcounter }}</td>
                 <td class="align-middle col-md-4">
                 <a href="{% url 'articles:detail' article.pk %}" class="text-decoration-none">{{ article.title }}</a>
                 </td>

@@ -8,6 +8,8 @@ from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
 from articles.models import Articles
+from articles.models import Comment
+
 
 # Create your views here.
 def signup(request):
@@ -37,9 +39,12 @@ def index(request):
     return render(request, "accounts/index.html", context)
 
 @login_required
-def mypage(request):
-    user = request.user
-    context = {"user": user}
+def mypage(request, pk):
+    # user = request.user
+    user = get_user_model().objects.get(pk=pk)
+    context = {
+        "user": user
+    }
     return render(request, "accounts/mypage.html", context)
 
 
@@ -120,3 +125,11 @@ def articles(request, pk):
         "articles": articles,
     }
     return render(request, "accounts/articles.html", context)
+
+@login_required
+def comments(request, pk):
+    comments = Comment.objects.filter(user=request.user).order_by("-pk")
+    context = {
+        "comments": comments,
+    }
+    return render(request, "accounts/comments.html", context)

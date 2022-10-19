@@ -42,9 +42,9 @@ def create(request):
             #     grade=grade,
             #     user=request.user,
             # )
-            post = form.save(commit=False)
-            post.user = request.user
-            post.save()
+            article = form.save(commit=False)
+            article.user = request.user
+            article.save()
             messages.success(request, '글 작성 완료')
             return redirect("articles:index")
     else:
@@ -59,7 +59,14 @@ def create(request):
 def update(request, pk):
     article = Articles.objects.get(pk=pk)
     if request.user != article.user:
-        return redirect("articles:index")
+        # (1) 아무말 없이 메인화면으로 보내기
+        # return redirect("articles:index")
+        # (2) flash message 활용
+        # messages.warning(request, '작성자만 수정할 수 있어요!')
+        # return redirect('articles.detail', article.pk)
+        # (3) 403 에러메세지 보내기
+        from django.http import HttpResponseForbidden
+        return HttpResponseForbidden()
     if request.method == "POST":
         form = ArticlesForm(request.POST, request.FILES, instance=article)
         if request.POST.get("grade") == "":
@@ -97,7 +104,7 @@ def delete(request, pk):
     else:
         return redirect("articles:detail", pk)
 
-
+@login_required
 def comment_create(request, pk):
     if request.user.is_authenticated:
         article = Articles.objects.get(pk=pk)
@@ -110,7 +117,7 @@ def comment_create(request, pk):
         return redirect('articles:detail', article.pk)
     return redirect('accounts:login')
 
-
+@login_required
 def comment_delete(request, article_pk, comment_pk):
     if request.user.is_authenticated:
         comment = Comment.objects.get(pk=comment_pk)

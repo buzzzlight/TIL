@@ -7,7 +7,8 @@
 
 {% block content %}
   <div class="container my-5">
-    <h1 class="mb-3">{{ request.user }}님의 작성글</h1>
+    <h1 class="mb-2">{{ request.user }}님의 작성글</h1>
+    <h5 class="mb-4">{{ articles|length }}개의 게시물</h5>
     <div>
       <table class="table table-hover">
         <thead>
@@ -17,18 +18,17 @@
             <th scope="col">영화</th>
             <th scope="col">평점</th>
             <th scope="col">작성일</th>
-            <th scope="col">작성자</th>
           </tr>
         </thead>
         <tbody>
           {% for article in articles %}
             <tr>
-              <th scope="row" class="align-middle">{{ article.pk }}</td>
-              <td class="align-middle">
+              <th scope="row" class="align-middle col-md-1">{{ forloop.revcounter }}</td>
+              <td class="align-middle col-md-4">
                 <a href="{% url 'articles:detail' article.pk %}" class="text-decoration-none">{{ article.title }}</a>
               </td>
-              <td class="align-middle">{{ article.movie_name }}</td>
-              <td class="align-middle">
+              <td class="align-middle col-md-2">{{ article.movie_name }}</td>
+              <td class="align-middle col-md-2">
                 <div class="d-flex align-items-center">
                   {% if article.grade == 0 %}
                     <div class="text-warning bi-star"></div>
@@ -99,8 +99,7 @@
                   {% endif %}
                 </div>
               </td>
-              <td class="align-middle col-md-1">{{ article.created_at|date:'m.d' }}</td>
-              <td class="align-middle col-md-1">{{ article.user }}</a></td>
+              <td class="align-middle col-md-3">{{ article.created_at|date:'Y-m-d a h:i' }}</td>
             </tr>
           {% endfor %}
         </tbody>
