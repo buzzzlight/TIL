@@ -4,10 +4,10 @@
   <div class="container my-5">
     <div class="row">
       {% for article in articles %}
-      <div class="col-4 mb-3">
+      <div class="col-md-4 col-sm-6 mb-4">
         {% comment %} 이미지 있는 글만 보이게 {% endcomment %}
         {% if article.image %}
-        <div class="card" style="width: 18rem; border-radius: 0.5rem; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);">
+        <div class="card card-style grow">
           <a href="{% url 'articles:detail' article.pk %}"><img src="{{ article.image.url }}" class="card-img-top" alt="..."></a>
           <div class="card-body">
             <a href="{% url 'articles:detail' article.pk %}" style="color: black;"><h5 class="card-title">{{ article.title }}</h5></a>

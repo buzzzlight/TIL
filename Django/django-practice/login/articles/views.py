@@ -117,6 +117,7 @@ def comment_create(request, pk):
         return redirect('articles:detail', article.pk)
     return redirect('accounts:login')
 
+
 @login_required
 def comment_delete(request, article_pk, comment_pk):
     if request.user.is_authenticated:
@@ -124,3 +125,16 @@ def comment_delete(request, article_pk, comment_pk):
         if request.user == comment.user:
             comment.delete()
     return redirect('articles:detail', article_pk)
+
+
+@login_required
+def comment_update(request, article_pk, comment_pk):
+    if request.user.is_authenticated:
+        comment = Comment.objects.get(pk=comment_pk)
+        comment_form = CommentForm(instance=comment)
+        if request.method == "POST":
+            update_form = CommentForm(request.POST, instance=comment)
+            if request.user == comment.user:
+                update_form.save()
+                return redirect('articles:detail', article_pk)
+    return redirect('accounts:login')
