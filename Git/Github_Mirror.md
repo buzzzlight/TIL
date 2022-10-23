@@ -28,3 +28,12 @@ git remote set-url --push origin [새롭게 생성한 저장소 주소]
 ```bash
 git push --mirror
 ```
+
+### 에러날 경우
+
+```bash
+git clone --bare [미러링할 저장소 주소]
+cd [미러링할 저장소 이름]
+git push --mirror [새롭게 생성한 저장소 주소]
+```
+
