@@ -139,18 +139,21 @@
               {% endif %}
               </div>
             </div>
-            <div class="comment_update_{{ comment.pk }} d-none">
-              <form action="{% url 'articles:comment_update' article.pk comment.pk %}" method="POST" class="form">
-                {% csrf_token %}
-                <div class="mb-3">
-                  <input type="text" class="form-control" name="updated_comment" id="updated_comment" maxlength="80" placeholder="댓글" value="{{ comment.content }}" required>
-                </div>
-                <div class="d-flex justify-content-end">
-                  <input class="btn btn-sm btn-primary me-1" type="submit" value="완료">
-                  <button class="btn btn-sm btn-secondary cancel_btn_{{ comment.pk }}" type="button">취소</button>
-                </div>
-              </form>   
-            </div>
+            {% if request.user == comment.user %}
+              <div id="update-{{ comment.pk }}" class="d-none">
+                <form action="{% url 'articles:comment_update' article.pk comment.pk %}" method="POST" class="form">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="updated_comment" class="form-label">수정하기</label>
+                    <input type="text" class="form-control" name="updated_comment" id="updated_comment" maxlength="80" placeholder="댓글" value="{{ comment.content }}" required>
+                  </div>
+                  <div class="d-flex justify-content-end">
+                    <input class="btn btn-sm btn-primary me-1" type="submit" value="완료">
+                    <button id="cancel-btn-{{ comment.pk }}" class="btn btn-sm btn-secondary" type="button">취소</button>
+                  </div>
+                </form>   
+              </div>
+            {% endif %}
             {% empty %}
             <p>댓글이 아직 없어요.</p>
           {% endfor %}

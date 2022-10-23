@@ -8,6 +8,7 @@
 
 - [Git](./Git/Git.md)
 - [Git Flow, Branch](./Git/Git_Flow.md)
+- [Github Mirror](Github_Mirror.md)
 
 ## GitHub
 
@@ -80,6 +81,9 @@
 - [Design Pattern](./Django/Design_Pattern.md)
 - [ModelForm](./Django/ModelForm.md)
 - [Cookie and Session](./Django/cookie.md)
+- 게시판 CRUD
+- 회원 관리
+- 이미지 업로드
 
 ## 참고 자료 
 
