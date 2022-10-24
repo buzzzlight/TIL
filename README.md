@@ -83,7 +83,7 @@
 - [Cookie and Session](./Django/cookie.md)
 - 게시판 CRUD
 - 회원 관리
-- 이미지 업로드
+- 이미지 업로드 
 
 ## 참고 자료 
 
