@@ -138,3 +138,14 @@ def comment_update(request, article_pk, comment_pk):
                 update_form.save()
                 return redirect('articles:detail', article_pk)
     return redirect('accounts:login')
+
+
+@login_required
+def like(request, pk):
+    article = Articles.objects.get(pk=pk)
+    if article.like_users.filter(id=request.user.id).exists():
+    # if request.user in article.like_users.all():
+        article.like_users.remove(request.user)
+    else:
+        article.like_users.add(request.user)
+    return redirect('articles:detail', pk)

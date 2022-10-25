@@ -104,6 +104,20 @@
               <img src="{{ article.image.url }}" alt="{{ article.image }}">
             {% endif %}
           </div>
+          <div>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'articles:like' article.pk %}">
+              {% if request.user in article.like_users.all %}
+              좋아요 <i class="bi bi-heart-fill"></i>
+              {% else %}
+              좋아요 <i class="bi bi-heart"></i>
+              {% endif %}
+            </a>
+            {% else %}
+            <a href="#">좋아요 <i class="bi bi-heart"></i></a>
+            {% endif %}
+            <span> {{ article.like_users.count }}</span>
+          </div>
         </div>
         <div class="bg-light p-3 mb-4" style="border-radius: 0.5rem; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);">
           <h5>댓글 ({{ comments|length }})</h5>
