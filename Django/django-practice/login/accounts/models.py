@@ -8,7 +8,8 @@ class User(AbstractUser):
     model.
     Username and password are required. Other fields are optional.
     """
-
+    followings = models.ManyToManyField('self', symmetrical=False, related_name='followers')
+    
     class Meta(AbstractUser.Meta):
         swappable = "AUTH_USER_MODEL"
 
