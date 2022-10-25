@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model  # from accounts.models import User
 from imagekit.models import ProcessedImageField
 from imagekit.processors import ResizeToFill
+from django.conf import settings
 
 # Create your models here.
 class Articles(models.Model):
@@ -15,6 +16,7 @@ class Articles(models.Model):
     image = ProcessedImageField(upload_to='images/', blank=True, null=True,
                                 processors=[ResizeToFill(400, 300)],
                                 format='JPEG', options={'quality': 90})
+    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_articles')
 
 
 class Comment(models.Model):
