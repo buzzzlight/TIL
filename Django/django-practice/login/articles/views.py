@@ -1,6 +1,6 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-
+from django.views.decorators.http import require_POST, require_safe
 import articles
 from .forms import ArticlesForm, CommentForm
 from .models import Articles, Comment
@@ -16,7 +16,8 @@ def index(request):
 
 
 def detail(request, pk):
-    article = Articles.objects.get(pk=pk)
+    # article = Articles.objects.get(pk=pk)
+    article = get_object_or_404(Articles, pk=pk)
     comment_form = CommentForm()
     context = {
         'article': article,
@@ -139,6 +140,7 @@ def comment_update(request, article_pk, comment_pk):
                 return redirect('articles:detail', article_pk)
     return redirect('accounts:login')
 
+from django.http import JsonResponse
 
 @login_required
 def like(request, pk):
@@ -146,6 +148,12 @@ def like(request, pk):
     if article.like_users.filter(id=request.user.id).exists():
     # if request.user in article.like_users.all():
         article.like_users.remove(request.user)
+        is_liked = False
     else:
         article.like_users.add(request.user)
-    return redirect('articles:detail', pk)
+        is_liked = True
+    context = {
+        'isLiked': is_liked,
+        'likeCount': article.like_users.count()
+    }
+    return JsonResponse(context)

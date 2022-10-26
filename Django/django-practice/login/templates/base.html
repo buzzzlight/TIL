@@ -37,7 +37,7 @@
             <div class="d-flex justify-content-center">
               <p class="my-auto mx-2">{{ request.user }}님</p>
               <a href="{% url 'articles:create' %}" class="my-auto mx-2">글쓰기</a>
-              <a href="{% url 'accounts:mypage' user.pk %}" class="my-auto mx-2">마이페이지</a>
+              <a href="{% url 'accounts:mypage' request.user.pk %}" class="my-auto mx-2">마이페이지</a>
               <a href="{% url 'accounts:logout' %}" class="my-auto mx-2">로그아웃</a>
             </div>
             {% else %}
@@ -58,6 +58,7 @@
   <footer>
     <!-- place footer here -->
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   {% bootstrap_javascript %}
   {% block js %}{% endblock js %}
 </body>

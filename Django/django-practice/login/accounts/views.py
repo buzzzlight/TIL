@@ -38,6 +38,7 @@ def index(request):
     }
     return render(request, "accounts/index.html", context)
 
+
 @login_required
 def mypage(request, pk):
     # user = request.user
@@ -54,6 +55,7 @@ def detail(request, pk):
         'user': user
     }
     return render(request, 'accounts/detail.html', context)
+
 
 def login(request):
     if request.user.is_authenticated:
@@ -94,6 +96,7 @@ def update(request):
     }
     return render(request, 'accounts/update.html', context)
 
+
 @login_required
 def password(request):
     if request.method == "POST":
@@ -124,7 +127,8 @@ def articles(request, pk):
     context = {
         "articles": articles,
     }
-    return render(request, "accounts/articles.html", context)
+    return render(request, 'accounts/articles.html', context)
+
 
 @login_required
 def comments(request, pk):
@@ -132,4 +136,22 @@ def comments(request, pk):
     context = {
         "comments": comments,
     }
-    return render(request, "accounts/comments.html", context)
+    return render(request, 'accounts/comments.html', context)
+
+@login_required
+def likes(request, pk):
+    return render(request, 'accounts/likes.html')
+
+@login_required
+def follow(request, pk):
+    # User = get_user_model()
+    # user = User.objects.get(pk=pk)
+    user = get_user_model().objects.get(pk=pk)
+    if request.user == user:
+        return redirect('accounts:mypage', pk)
+    if request.user in user.followers.all():
+    # if user.followers.filter(id=request.user.id).exists():
+        user.followers.remove(request.user)
+    else:
+        user.followers.add(request.user)
+    return redirect('accounts:mypage', pk)

@@ -104,19 +104,21 @@
               <img src="{{ article.image.url }}" alt="{{ article.image }}">
             {% endif %}
           </div>
-          <div>
+          <!-- 좋아요 버튼 -->
+          <div class="d-flex justify-content-center mt-4 mb-2">
             {% if request.user.is_authenticated %}
-            <a href="{% url 'articles:like' article.pk %}">
               {% if request.user in article.like_users.all %}
-              좋아요 <i class="bi bi-heart-fill"></i>
+              <div class="btn btn-danger" style="background-color: #FF617B;">
+                <i id="like-btn" data-article-id="{{ article.pk }}" class="bi bi-heart-fill"></i><span id="like-count"> {{ article.like_users.count }}</span>
+              </div>
               {% else %}
-              좋아요 <i class="bi bi-heart"></i>
+              <div class="btn btn-outline-danger">
+                <i id="like-btn" data-article-id="{{ article.pk }}" class="bi bi-heart"></i><span id="like-count"> {{ article.like_users.count }}</span>
+              </div>
               {% endif %}
-            </a>
             {% else %}
-            <a href="#">좋아요 <i class="bi bi-heart"></i></a>
+            <a href="#" class="btn btn-outline-primary"><i class="bi bi-heart"><span id="like-count"> {{ article.like_users.count }}</span></i></a>
             {% endif %}
-            <span> {{ article.like_users.count }}</span>
           </div>
         </div>
         <div class="bg-light p-3 mb-4" style="border-radius: 0.5rem; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);">
@@ -203,4 +205,30 @@
       </div>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // 좋아요 버튼
+    const likeBtn = document.querySelector('#like-btn')
+    // 좋아요 버튼을 누르면 함수 실행
+    likeBtn.addEventListener('click', function(event) {
+      // 서버로 비동기 요청
+      axios({
+        method: 'get',
+        url: `/articles/${event.target.dataset.articleId}/like/`
+      })
+      .then(response => {
+        // event.target.classList.toggle('bi-heart')
+        // event.target.classList.toggle('bi-heart-fill')
+        if (response.data.isLiked === true) {
+          event.target.classList.add('bi-heart-fill')
+          event.target.classList.remove('bi-heart')
+        } else {
+          event.target.classList.add('bi-heart')
+          event.target.classList.remove('bi-heart-fill')
+        }
+        const likeCount = document.querySelector('#like-count')
+        likeCount.innerText = response.data.likeCount
+      })
+    })
+  </script>
 {% endblock content %}
