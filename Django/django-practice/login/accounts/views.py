@@ -138,9 +138,11 @@ def comments(request, pk):
     }
     return render(request, 'accounts/comments.html', context)
 
+
 @login_required
 def likes(request, pk):
     return render(request, 'accounts/likes.html')
+
 
 @login_required
 def follow(request, pk):

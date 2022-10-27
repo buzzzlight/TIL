@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 1280px;
+  color: #333333;
+  height: 2000px;
+}
+.line {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  top: 0;
+  position: sticky;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 1px;
+  height: 50px;
+  background-color: white;
+}
+.nav-link:hover {
+  color: gray;
+  background-color: black;
+  border-radius: 3px;
+}
+.nav-link {
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+.nav-title {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  font-weight: bold;
+}
+.nav-list {
+  display: flex;
+}
+.nav-item {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.nav-item2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-right: 2.5rem;
+}
+.banner {
+  width: 1280px;
+  align-items: center;
+}
+.main-image {
+  background-image: url('../assets/apparel.jpeg');
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.main-text {
+  color: #8b6d6d;
+  font-size: 100px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+.about {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+.about-image {
+  width: 500px;
+  border-radius: 20px;
+}
+.article {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
+.article-title {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.article-text {
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.more {
+  font-size: 40px;
+  text-align: center;
+  margin-top: 5rem;
+}
+.more-info {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3.5rem;
+  margin-left: 12rem;
+  margin-right: 12rem;
+}
+.more-center {
+  text-align: center;
+}
+.more-image {
+  width: 64px;
+}
+.more-text{
+  margin-top: 1rem;
+  letter-spacing: 1px;
+  line-height: 2;
+}
+.button {
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+}
+.container {
+  width: 1280px;;
+  align-items: center;
+  margin-top: 30rem;
+}
+.cards {
+  display: flex;
+  margin-top: 1rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  margin-bottom: 0rem;
+}
+.cards2 {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid;
+  padding:10px;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 0rem;
+}
+.card-image {
+
+}
+.card-title {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.card-text {
+
+}

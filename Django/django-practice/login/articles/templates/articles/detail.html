@@ -121,11 +121,12 @@
             {% endif %}
           </div>
         </div>
+        <!-- 댓글창 -->
         <div class="bg-light p-3 mb-4" style="border-radius: 0.5rem; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);">
           <h5>댓글 ({{ comments|length }})</h5>
-          {% comment %} <h5>{{ comments|length }}개의 댓글</h5> {% endcomment %}
+          <!-- <h5>{{ comments|length }}개의 댓글</h5> -->
           {% if request.user.is_authenticated %}
-          <form action="{% url 'articles:comment_create' article.pk %}" method="POST">
+          <form id="comment-form" action="{% url 'articles:comment_create' article.pk %}" method="POST">
               {% csrf_token %}
               {% bootstrap_form comment_form %}
             <div class="d-flex justify-content-end">
@@ -228,6 +229,17 @@
         }
         const likeCount = document.querySelector('#like-count')
         likeCount.innerText = response.data.likeCount
+      })
+    })
+  </script>
+  <script>
+    // 댓글 비동기
+    const commentForm = document.querySelector('#comment-form')
+    commentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      axios({
+        method: 'post',
+        url: `/articles/${event.target.dataset.articleId}/comments/`
       })
     })
   </script>
