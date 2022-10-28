@@ -44,7 +44,7 @@ TV의 리모컨 / 스마트폰 터치 같은 것. 조작을 하는 것
 
 > 분산 버전 관리 시스템
 
-![git](https://github.com/psun0610/TIL/raw/master/Git/Git.assets/git.png)
+![git](Git.assets/git.png)
 
 리누스 토발즈가 만듦 리눅스 커널과 깃을 최초로 개발...
 
@@ -123,8 +123,6 @@ git log -> 3통 조회
 
   - 커밋 안된 파일 조회 가능 
 
-
-
 - `$ git log ` 
 - Git 기록 보여줌
   
@@ -162,7 +160,7 @@ Git은 Working Directory, Staging Area, Repository로 이루어져있다.
 
 ## 파일 라이프사이클
 
-![파일라이프사이클](https://github.com/psun0610/TIL/raw/master/Git/Git.assets/%ED%8C%8C%EC%9D%BC%EB%9D%BC%EC%9D%B4%ED%94%84%EC%82%AC%EC%9D%B4%ED%81%B4.PNG)
+![파일라이프사이클](Git.assets/파일라이프사이클.png)
 
 [이미지 출처](https://git-scm.com/book/ko/v2/Git의-기초-수정하고-저장소에-저장하기)
 

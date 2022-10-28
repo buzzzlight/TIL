@@ -4,7 +4,7 @@ Git을 활용하여 협업하는 흐름으로 branch를 활용하는 전략을 �
 
 Git 작업을 할 때는 항상 `$ git status` 를 생활화 하자
 
-![img](https://nvie.com/img/git-model@2x.png)
+![git-model@2x](Git_Flow.assets/git-model@2x.png)
 
 [이미지출처](https://nvie.com/posts/a-successful-git-branching-model/)
 

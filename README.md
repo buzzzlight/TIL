@@ -8,7 +8,7 @@
 
 - [Git](./Git/Git.md)
 - [Git Flow, Branch](./Git/Git_Flow.md)
-- [Github Mirror](Github_Mirror.md)
+- [Github Mirror](./Git/Github_Mirror.md)
 
 ## GitHub
 

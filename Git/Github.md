@@ -2,7 +2,7 @@
 
 ## GitHub란?
 
-![github](https://github.com/psun0610/TIL/raw/master/Git/GitHub.assets/github.png)
+![github](Github.assets/github.png)
 
 Git이 분산 버전 관리 시스템이라면 GitHub는 이러한 Git을 사용하는 프로젝트를 지원하는 웹호스팅 서비스(**원격 저장소**)다.
 
