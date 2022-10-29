@@ -69,6 +69,7 @@
   - [table, form, input](./HTML_CSS/06_table_form_input.md)
 - [CSS](./HTML_CSS/03_CSS.md)
   - [Flex](./HTML_CSS/04_CSS_flex.md)
+- [Bootstrap](./HTML_CSS/07_bootstrap.md)
 - [실습](./HTML_CSS/HTML_CSS_practice)
 
 ## JavaScript
