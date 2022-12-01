@@ -69,12 +69,16 @@
   - [table, form, input](./HTML_CSS/06_table_form_input.md)
 - [CSS](./HTML_CSS/03_CSS.md)
   - [Flex](./HTML_CSS/04_CSS_flex.md)
+  - [Grid](./HTML_CSS/09_CSS_Grid.md)
 - [Bootstrap](./HTML_CSS/07_bootstrap.md)
-- [실습](./HTML_CSS/HTML_CSS_practice)
+  - [Grid](./HTML_CSS/08_Bootstrap_Grid.md)
+
+- [연습](./HTML_CSS/HTML_CSS_practice)
 
 ## JavaScript
 
 - [JS 기초](./JavaScript/01_JavaScript_기초.md)
+- [연습](./JavaScript/js_practice)
 
 ## Django
 
