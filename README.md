@@ -73,7 +73,6 @@
   - [Grid](./HTML_CSS/09_CSS_Grid.md)
 - [Bootstrap](./HTML_CSS/07_bootstrap.md)
   - [Grid](./HTML_CSS/08_Bootstrap_Grid.md)
-
 - [연습](./HTML_CSS/HTML_CSS_practice)
 
 ## JavaScript
