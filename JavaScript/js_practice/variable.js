@@ -58,7 +58,7 @@ console.log(negativeInfinity);
 console.log(nAn);
 
 // bigInt (fairly new, don't use it yet)
-const bigInt = 12345678923423423422434234234234234234; // over (-2**53 ~ 2**53)
+const bigInt = 12345678923423423422434234234234234234n; // over (-2**53 ~ 2**53)
 console.log(`value: ${bigInt}, type: ${typeof bigInt}`);
 Number.MAX_SAFE_INTEGER;
 

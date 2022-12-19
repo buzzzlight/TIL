@@ -78,7 +78,8 @@
 ## JavaScript
 
 - [JS 기초](./JavaScript/01_JavaScript_기초.md)
-- [JavaScript data types](./JavaScript/02_JavaScript_data_types.md)
+- [Data Types](./JavaScript/02_JavaScript_data_types.md)
+- [Operator](./JavaScript/03_operator.md)
 - [연습](./JavaScript/js_practice)
 
 ## Django
