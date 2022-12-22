@@ -80,6 +80,8 @@
 - [JS 기초](./JavaScript/01_JavaScript_기초.md)
 - [Data Types](./JavaScript/02_JavaScript_data_types.md)
 - [Operator](./JavaScript/03_operator.md)
+- [Function](./JavaScript/04_function.md)
+- [Class](./JavaScript/05_class.md)
 - [연습](./JavaScript/js_practice)
 
 ## Django
