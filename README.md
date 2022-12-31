@@ -82,6 +82,7 @@
 - [Operator](./JavaScript/03_operator.md)
 - [Function](./JavaScript/04_function.md)
 - [Class](./JavaScript/05_class.md)
+- [Object](./JavaScript/06_objects.md)
 - [연습](./JavaScript/js_practice)
 
 ## Django

@@ -2,6 +2,7 @@
 // one of the JavaScript's data types.
 // a collection of related data and/or functionality
 // Nearly all objects in JavaScript are instances of Object
+// object = { key : value };
 
 // 1. Literals and properties
 const obj1 = {}; // 'object literal' syntax
@@ -93,8 +94,7 @@ for (key in user) {
 console.clear();
 console.log(user3);
 
-const user4 = {};
-Object.assign({}, user);
+const user4 = Object.assign({}, user);
 console.log(user);
 
 // another example
