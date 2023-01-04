@@ -30,7 +30,7 @@
 
 - [입력과 출력](./Algorithm/01_Algorithm.md)
 - [시간 복잡도](./Algorithm/02_time_complexity.md)
-- 데이터구조
+- 자료구조 (데이터구조)
   - [리스트](./Algorithm/03_list.md)
   - [문자열](./Algorithm/04_string.md)
   - [딕셔너리](./Algorithm/05_dictionary.md)
@@ -74,6 +74,7 @@
 - [Bootstrap](./HTML_CSS/07_bootstrap.md)
   - [Grid](./HTML_CSS/08_Bootstrap_Grid.md)
 - [연습](./HTML_CSS/HTML_CSS_practice)
+- [참고](./HTML_CSS/sites.md)
 
 ## JavaScript
 
@@ -83,6 +84,7 @@
 - [Function](./JavaScript/04_function.md)
 - [Class](./JavaScript/05_class.md)
 - [Object](./JavaScript/06_objects.md)
+- [Array](./JavaScript/07_array.md)
 - [연습](./JavaScript/js_practice)
 
 ## Django
