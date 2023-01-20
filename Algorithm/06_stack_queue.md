@@ -71,14 +71,14 @@ print(queue[0])
 - 데이터를 뺄 때 큐 안에 있는 데이터가 많은 경우 비효율적이다
 - 맨 앞의 데이터가 빠지면서, 리스트의 인덱스가 하나씩 당겨지기 때문
 
-### 덱(Deque, Double-Ended Queue) 자료구조
+## 덱(Deque, Double-Ended Queue)
 
 > **양방향**으로 삽입과 삭제가 자유로운 큐
 
 ![jhgj](06_stack_queue.assets/jhgj.JPG)
 
-- 덱은 양 방향 삽입, 추출이 모두 큐보다 훨씬 빠름
-- 따라서 데이터의 삽입, 추출이 많은 경우에 시간을 크게 단축 시킬 수 있다
+- 덱은 양 방향 삽입, 추출이 모두 큐보다 훨씬 **빠름**
+- 데이터의 삽입, 추출이 많은 경우에 크게 시간 단축 가능
 
 - [백준 2161](https://www.acmicpc.net/problem/2161) - 덱을 이용한 풀이
 
@@ -93,4 +93,55 @@ while len(queue) > 1:
     queue.append(queue.popleft())
     
 print(queue[0])
+```
+
+```python
+from collections import deque
+
+dq = deque('hello')
+print(dq)
+# deque(['h', 'e', 'l', 'l', 'o'])
+
+# 왼쪽에 값 넣기
+dp.appendleft('a')
+print(dq)
+# deque(['a', h', 'e', 'l', 'l', 'o'])
+
+# 왼쪽 값 빼기
+dp.popleft()
+print(dq)
+# deque(['h', 'e', 'l', 'l', 'o'])
+
+# 확장
+dq.extend('hi')
+print(dq)
+# deque(['h', 'e', 'l', 'l', 'o', 'h', 'i'])
+
+# 왼쪽부터 확장
+dq.extendleft('hi')
+print(dq)
+# deque(['h', 'i', 'h', 'e', 'l', 'l', 'o', 'h', 'i'])
+
+# 인덱스를 이용한 수정
+dq[1] = 'o'
+print(dq)
+# deque(['h', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'i'])
+
+# 인덱스를 이용한 삽입
+dq.insert(0, 'a')
+print(dq)
+# deque(['a', 'h', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'i'])
+dq.insert(100, 'a')
+print(dq)
+# deque(['a', 'h', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'i', 'a'])
+
+# 인덱스를 이용한 삭제
+dq.remove('a')
+print(dq)
+# deque(['h', 'o', 'h', 'e', 'l', 'l', 'o', 'h', 'i', 'a'])
+# 같은 항목이 있으면 왼쪽부터 삭제됨
+
+# 거꾸로 뒤집기
+dq.reverse()
+print(dq)
 ```
