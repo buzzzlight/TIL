@@ -85,12 +85,35 @@
 
 - 가장 시간 소요가 적고 효율적이고 안전함
 
-### use strict
+### Strict mode
 
 - 바닐라 자바스크립트로 개발할때 맨 위에 `'use strict';` 선언하기
 - 자바스크립트 엔진이 더 효율적으로 빠르게 자바스크립트 분석 가능
+- interface, private, if 같은 이름으로 변수를 설정할 수 없음
 
 ## Variable
+
+### 변수 이름 짓기
+
+- keyword는 변수로 쓸 수 없다 (function, new 등)
+
+- 숫자가 맨 앞에 올 수 없다
+
+- 대문자로 시작하지 않는다
+
+- 카멜표기법 사용
+
+- 기호는_와 $만 사용가능
+
+```js
+// 좋은 예
+let myFirstJob = 'Programmer';
+let myCurrentJob = 'Teacher';
+
+// 나쁜 예
+let job1 = 'programmer';
+let job2 = 'teacher';
+```
 
 ### `let`
 
@@ -100,6 +123,8 @@
 
 - added in ES6
 - mutable type
+
+### Blockscope
 
 ```js
 // Global Scope
@@ -173,7 +198,9 @@ const maxNumber = 5;
 
 ### `number`
 
-- 정수든 소수점이든 상관없이 type이 number로 지정됨
+- Floating point numbers
+  - Used for decimals and integer
+  - 모든 숫자는 number 타입 (int와 float로 나뉘지 않음)
 
 ```js
 const count = 17; //integer
@@ -204,8 +231,9 @@ console.log(nAn);
 // NaN
 ```
 
-- `bigInt`
+- `bigInt` (ES2020)
   - -2^53 ~ 2^53 범위 밖에 있는 숫자를 표현할 때
+  - Larger integers than the Number type can hold
   - 숫자 끝에 n 추가
   - 거의 안쓰임
 
@@ -218,6 +246,9 @@ console.log(`value: ${bigInt}, type: ${typeof bigInt}`);
 ```
 
 ### `string`
+
+  - Sequence of characters
+  - Used for text
 
 ```js
 const char = 'c';
@@ -233,7 +264,46 @@ console.log('value: ' + helloBob + ' type: ' + typeof helloBob);
 // value: hi brendan!, type: string
 ```
 
+### Type Conversion
+
+- Number() : String -> Number
+
+- String() : Number -> String
+
+```js
+const inputYear = '1991'; // String
+console.log(Number(inputYear));
+console.log(inputYear + 18); // 199118
+console.log(Number(inputYear) + 18); // 2009
+
+console.log(Number('Subin')); // Nan (Not a number)
+console.log(typeof NaN); // (invalid) number
+
+console.log(String(23), 23);
+```
+
+### Type Coercion
+
+- 강제 타입 변환
+
+```js
+console.log('I am ' + 23 + ' years old'); // 'I am 23 years old' 숫자 -> 문자열
+console.log('23' - '10' - 3); // 10 문자열 -> 숫자
+console.log('23' + '10' + 3); // '23103' 숫자 -> 문자열
+console.log('23' * '2'); // 46 문자 -> 숫자
+
+let n = '1' + 1; // '11'
+n = n - 1;
+console.log(n); // 10
+
+console.log(2 + 3 + 4 + '5'); // '95'
+console.log('10' - '4' - '3' - 2 + '5'); // '15'
+```
+
 ### `boolean`
+
+  - Logical type that can only be **true or false**
+  - Used for taking decisions
 
 - false : 0, null, undefined, NaN, ''
 
@@ -262,7 +332,7 @@ console.log(`value: ${nothing}, type: ${typeof nothing}`);
 
 ### `undefined`
 
-- 선언은 되었지만 아무것도 값이 지정되어 있지 않음
+- 값을 할당하지 않고 변수 선언만 한 상태 (빈 값)
 
 - 텅텅 비었는지 값이 지정되어있는지 정해져있지않음
 
@@ -277,7 +347,11 @@ console.log(`value: ${x}, type: ${typeof x}`);
 
 ### `symbol`
 
+- ES2015
+
 - create unique identifiers for objects
+
+-  Value that is unique and connot be changed
 
 - map이나 다른 자료구조에서 고유한 식별자가 필요하거나 동시다발적으로 일어날수있는 코드에서 우선순위를 주고싶을때, 고유한 식별자가 필요할때 쓰여짐
 

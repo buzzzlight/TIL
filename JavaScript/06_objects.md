@@ -4,6 +4,7 @@
 - a collection of related data and/or functionality
 - Nearly all objects in JavaScript are instances of Object
 - object = { key : value }; object는 key와 value의 집합체
+- array는 순서가 중요하지만 object는 순서가 중요하지 않다
 
 ## Literals and properties
 
@@ -48,6 +49,9 @@ print(subin);
 // can add properties later
 
 subin.hasJob = true;
+subin.location = 'Portugal';
+subin['twitter'] = '@asdasd';
+
 console.log(subin.hasJob);
 // true
 ```
@@ -99,6 +103,23 @@ printValue(subin, 'name');
 // subin
 printValue(subin, 'age');
 // 4
+```
+
+```js
+// Dot vs Bracket Notation
+console.log(subin);
+
+console.log(subin.lastName); // lastName value값 가져오기
+console.log(subin['lastName']);
+
+const nameKey = 'Name';
+console.log(subin['first' + nameKey]);
+console.log(subin['last' + nameKey]);
+// Dot은 반드시 .key값을 입력해야하지만 []는 안에 식을 넣어도 됨(속성 이름을 계산해야할 떄 쑴)
+
+const interestedIn = prompt('What do you want to know about subin? choose between firstName, lastName, age, job, and friends');
+console.log(subin.interestedIn); // undefined
+console.log(subin[interestedIn]); // teacher
 ```
 
 ## Property value shorthand

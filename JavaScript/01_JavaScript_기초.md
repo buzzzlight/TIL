@@ -1,10 +1,16 @@
 # JavaScript
 
+> high-level, object-oriented, multi-paradigm programming language
+
 ![0915(2)](01_JavaScript_기초.assets/0915(2).png)
 
 - 브라우저 화면을 **동적**으로 만들기 위함
 - 브라우저를 조작할 수 있는 유일한 언어
 - 전세계에서 가장 많이 사용되는 언어 중 하나
+- instruct computer to do things
+- dont have to worry about complex stuff like memory management
+- based on objects, for storing most kinds of data
+- We can use different styles of programming
 
 ```html
 <!-- JS 코드를 작성하는 영역 -->
@@ -20,6 +26,14 @@
     body.appendChild(title)
 </script>
 ```
+
+## The Role of JS in web development
+
+![image-20230328022738255](01_JavaScript_기초.assets/image-20230328022738255.png)
+
+- html - content
+- css - presentation
+- js - programming langauge (building web applications)
 
 ## JavaScript 탄생
 

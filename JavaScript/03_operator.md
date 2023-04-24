@@ -95,9 +95,10 @@ console.log(10 >= 6); // greater than or equal
 
 ### Logical operators
 
-- `||` (or)
-- `&&` (and)
-- `!` (not)
+- `A && B` (A and B) : A와 B 모두 true 일 때 true
+- `A || B` (A or B) : A와 B 둘 중 하나만 true 여도 true
+
+- `!A` (not A) : A가 true면 false 반환
 
 ```js
 const value1 = false;
@@ -141,8 +142,9 @@ console.log(!value1); // false
 
 ### Equality
 
-- `==`
-- `===`
+- `==`: type coercion 적용돼서 type이 달라도 true
+  - `==` 사용시 버그 찾기 어려움 .. 사용 잘 안함
+- `===` : type까지 일치해야 true
 
 ```js
 const stringFive = '5';
@@ -158,6 +160,11 @@ console.log(stringFive != numberFive); // false
 // 웬만하면 === 쓴다 ...
 console.log(stringFive === numberFive); // false
 console.log(stringFive !== numberFive); // true
+
+const age = '18';
+if (age === 18) console.log('You just became an adult! (strict)');
+if (age == 18) console.log('You just became an adult! (loose)');
+// 'You just became an adult! (loose)'
 
 // object equality by reference
 const subin1 = { name: 'subin'};
@@ -195,16 +202,40 @@ if (name === 'subin') {
 /// Welcome, Subin!
 ```
 
-### Ternary operator
+```js
+const age = 19;
+
+// ()가 true 일때만 if {} 실행
+// ()가 false 일 경우 else {} 실행
+if (age >= 18) {
+    console.log('Sarah can start driving license 😉');
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young. Wait another ${yearsLeft} years 😀`)
+}
+```
+
+### Conditional(Ternary) operator
 
 - `?`
+- 간단하게 출력할 때만 사용하는게 좋음
+
+```js
+const age = 23;
+age >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water');
+
+// age >= 18 이 true 일 때, ? 뒤 실행 (if)
+// false면 : 뒤 실행 (else)
+
+// 변수에 저장 가능
+const drink = age >= 18 ? 'wine' : 'water';
+console.log(drink); // wine
+```
 
 ```js
 // condition ? value1 : value2;
 console.log(name === 'subin' ? 'yes' : 'no');
 // true면 왼쪽 값(yes) 출력, false면 오른쪽 값(no) 출력
-
-// 간단하게 출력할 때만 사용하는게 좋음
 ```
 
 ### Switch operator
@@ -232,6 +263,48 @@ switch (browser) {
 }
 
 // go away!
+```
+
+```js
+const day = 'monday';
+
+switch (day) {
+  case 'monday': // day === 'monday'
+    console.log('Plan course structure');
+    console.log('Go to coding meetup');
+    break;
+  case 'tuesday':
+    console.log('Prepare theory videos');
+    break;
+  case 'wednesday':
+  case 'thursday':
+    console.log('Write code examples');
+    break;
+  case 'friday':
+    console.log('Record videos');
+    break;
+  case 'saturday':
+  case 'sunday':
+    console.log('Enjoy the weekend :D');
+    break;
+  default:
+    console.log('Not a valid day...');
+}
+
+if (day === 'monday') {
+  console.log('Plan course structure');
+  console.log('Go to coding meetup');
+} else if (day === 'tuesday') {
+  console.log('Prepare theory videos');
+} else if (day === 'wednesday' || day === 'thursday') {
+  console.log('Write code examples');
+} else if (day === 'friday') {
+  console.log('Record videos');
+} else if (day === 'saturday' || day === 'sunday') {
+  console.log('Enjoy the weekend :D');
+} else {
+  console.log('Not a valid day...');
+}
 ```
 
 ### Loops

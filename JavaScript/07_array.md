@@ -25,6 +25,22 @@ console.log(fruits[2]);
 // undefined
 ```
 
+```js
+const friends = ['Michael', 'Steven', 'Peter'];
+
+console.log(friends[0]); // Michael
+console.log(friends[2]); // Peter
+
+console.log(friends.length); // 3
+console.log(friends[friends.length - 1]) // Peter (배열의 마지막요소 가져오기)
+
+friends[2] = 'Jay';
+console.log(friends); // ['Michael', 'Steven', 'Jay'] Peter ==> Jay
+// premitive values 만 immutable 하다
+// array의 요소는 premitive values가 아니라서 바뀔 수 있음
+// friends = ['Bob', 'Alice'] // 이렇게는 바꿀 수 없음
+```
+
 ## Looping over an array
 
 > 배열의 모든 요소 출력하는 세가지 방법
@@ -89,7 +105,7 @@ fruits.forEach((fruit) => console.log(fruit));
 ### `push`
 
 - add an item to the end
-- 맨 뒤에 인자 추가
+- 맨 뒤에 인자 추가 & 추가된 배열의 길이 반환
 
 ```js
 fruits.push('🍌','🥝');
@@ -100,7 +116,7 @@ console.log(fruits);
 ### `pop`
 
 - remove an item from the end
-- 맨 뒤 인자 삭제
+- 맨 뒤 인자 삭제 & 삭제된 인자 반환
 
 ```js
 fruits.pop();
@@ -112,7 +128,7 @@ console.log(fruits);
 ### `unshift`
 
 - add an item to the beginning
-- 맨 앞에 인자 추가
+- 맨 앞에 인자 추가 & 추가된 배열의 길이 반환
 
 ```js
 fruits.unshift('🍌','🥝');
@@ -123,7 +139,7 @@ console.log(fruits);
 ### `shift`
 
 - remove an item to the beginning
-- 맨 앞 인자 삭제
+- 맨 앞 인자 삭제 & 삭제된 인자 반환
 
 ```js
 fruits.shift();
@@ -189,11 +205,13 @@ console.log(fruits.indexOf('🥝'));
 // 0
 console.log(fruits.indexOf('🍗'));
 // -1
+// 없는 요소일때 -1 반환
 ```
 
 ### `includes`
 
-- 배열에 data가 있는지 없는지 확인하는 함수
+- 요소가 배열 안에 있는지 확인하는 함수
+- includes는 strict한 methods이기 때문에 타입이 다르면 false 반환
 
 ```js
 console.log(fruits.includes('🍅'));

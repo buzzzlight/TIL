@@ -2,7 +2,7 @@
 
 - fundamental building block in the program
 
-- subprogram, 여러번 재사용 가능
+- subprogram, 여러번 **재사용** 가능
 
 - 한가지의 task나 어떠한 값을 계산하기 위해 쓰임
 
