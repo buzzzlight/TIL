@@ -81,4 +81,62 @@
 > Push & SIngle Source of Truth
 
 - React에 값이 완전히 제어되는 Input Element - input handler에 value를 onchange로 단 것
-- State
+- State를 값으로 넘기고 그 State을 다를수 있는 핸들러를 콜백으로 넘긴다
+- 값을 -로 받는다
+- 사용자가 입력하면 값을 계속 push 하는  것
+- 진실의 원천이 유지되기 쉬움 (?)
+- DOM에 바뀌는 상태, React 상태, DOM 객체에 들어있는 값이 계속 진실의 원천으로 동기화가 됨
+- 내가 제어하고 내가 push 하고 진실의 원천으로 계쏙 상태가 유지된다
+
+```js
+// input의 값은 항상 React state의 값
+<input value={value} onChange={handeChange}/>
+```
+
+## Uncontrolled Component (비제어 컴포넌트)
+
+> Pull & get State
+
+- 전통적인 HTML처럼 DOM에 제어되는 Input Element
+- 오직 사용자만 값과 상호작용
+- 값을 -로 사용한다
+
+- 내가 제어하지 않고 필요할때 상태를 꺼내옴
+- 상태를 꺼내오기 전엔 렌더링이 일어나지 않음
+
+```js
+<input value={value} onChange={handleChange} ref={inputRef}/>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
