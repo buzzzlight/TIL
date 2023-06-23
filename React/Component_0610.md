@@ -87,11 +87,35 @@
 - 진실의 원천이 유지되기 쉬움 (?)
 - DOM에 바뀌는 상태, React 상태, DOM 객체에 들어있는 값이 계속 진실의 원천으로 동기화가 됨
 - 내가 제어하고 내가 push 하고 진실의 원천으로 계쏙 상태가 유지된다
+- 값 유효성 체크를 해야하는 경우(비밀번호)에 제어 컴포넌트 사용
+- 타이핑마다 유효성 체크
 
 ```js
 // input의 값은 항상 React state의 값
 <input value={value} onChange={handeChange}/>
 ```
+
+```js
+const PushComponent = () => {
+  // inputValue => 렌더링 시점마다 고유의 값을 가진다..
+  const [inputValue, setInputValue] = useState('')
+  
+  // 이벤트 핸들러를 항상 작성해야한다 (push 해야 하기 때문)
+  const handleChange = ({ target }) => {
+    setInputValue(target.value)
+  }
+  
+  return (<input
+    value = {inputValue}
+	onChange = {handleChange}
+	<h2>
+    {inputValue}
+	</h2>
+  />)
+}
+```
+
+
 
 ## Uncontrolled Component (비제어 컴포넌트)
 
@@ -103,40 +127,120 @@
 
 - 내가 제어하지 않고 필요할때 상태를 꺼내옴
 - 상태를 꺼내오기 전엔 렌더링이 일어나지 않음
+- 값 유효성 체크를 해야할 필요가 없이 값을 전달하는 경우엔 비제어 컴포넌트 사용
+- form 제출 시 한번 유효성 체크
 
 ```js
 <input value={value} onChange={handleChange} ref={inputRef}/>
 ```
 
+```js
+const PullComponent = () => {
+  // 렌더링시에는 원하는 값을 볼 수 없다
+  // 개발자가 직접 트리거해야한다
+  const inputRef = useRef('')
+  
+  // 이벤트 핸들러를 항상 작성해야한다 (push 해야 하기 때문)
+  // 항상 쓸 필요는 없다 <=== 이게 핵심
+  // 비제어 컴포넌트는 필요한 시점에 트리거 하기 때문
+  const handleChange = ({ target }) => {
+    inputValue.current.value = target.value
+  }
+  
+  return (<input
+	onChange = {handleChange}
+	ref = {inputRef}
+	<h2>
+    {inputValue.current.value}
+	</h2>
+  />)
+}
+```
 
 
 
+|             | Controlled (제어)                                            | Uncontrolled (비제어)                                        |
+| ----------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| 지향점      | Push                                                         | Pull                                                         |
+| 사용성      | 항상 진실의 원천을 유지                                      | 값을 담아내는 방법 필요<br />값을 가져오는 트리거 포인트 필요<br />그리고 이 모든것을 관리하는 코드 직접 작성 |
+| 성능        | 잦은 리렌더링                                                | 구현하는 방법에 따라 다르지만 성능에 이점이 있을 수 있음     |
+| 동적 핸들링 | 상태를 중심으로 개발하기 때문에 상태 변경에 따른 핸들링이 용이함 | DOM을 직접 조작하기 때문에 핸들링이 어렵고 값 비싼 비용 지불 |
+| 유효성 검사 | 상태 변경 => UI 자동으로 업데이트<br />이러한 자동 업데이트로 인해 개발자가 별도의 업데이트 코드를 작성할 필요가 없음 | DOM을 직접 조작하기 때문에 핸들링이 어렵고 값 비싼 비용 지불 |
+
+### 제어 vs 비제어 컴포넌트가 중요한 이유
+
+- CDD (컴포넌트 주도 개발)에 엄청난 연향을 끼침
+- 컴포넌트를 만들고 구성하는데 코드레벨, 설계에 엄청난 영향을 줌
+
+ 
+
+## 스토리북 상호작용 테스트
+
+### TDD (Test-Driven-Development)
+
+- 테스트 주도 개발
+- https://martinfowler.com/bliki/TestPyramid.html
+
+- UI 테스트 시 비용이 많이들고 느리다 (코드를 작성하기 위한 노력 비용)
+
+create react app 시 jest와 rtl(react testing library) 자동으로 깔림 
+
+테스트 도구 - jest
+
+- 이제는 피라미드 x .. 테스트 트로피를 생각 ..
 
 
 
+### 테스팅 트로피
+
+![Shapes from top to bottom: End to end (triangle), Integration (hexagon), Unit (trapezoid), and Static (trapezoid)](https://pbs.twimg.com/media/DVUoM94VQAAzuws?format=jpg&name=900x900)
+
+- 트로피에 페인트를 칠할 때, 맨 위 꼭대기를 칠하려면 붓을 들고 올라가야 한다
+- **올바른 테스트 전략을 선택하는 것**이 벽을 칠하기 위한 붓을 선택하는 것과 같다
+- 만약 미세한 붓을 사용하게 된다면 작업시간이 매우 오래걸리고 표면이 고르지 않을 것
+
+#### 테스팅 트로피의 테스트 종류
+
+- End to End
+  - 사용자 입장에서 애플리케이션이 잘 동작하는지 전체적으로 테스트
+  - 일반적으로 전체 애플리케이션(프론트엔드 및 백엔드 모드)을 실행, 테스트는 실제 사용자가 사용하는 것처럼 앱과 상호작용
+- Integration
+  - 여러 유닛 테스트를 합친 것
+  - 여러 단위가 함께 상호 작용
+  - 실제 DB, 브라우저 없이 큰 규모의 기능이나 하나의 페이지가 잘 작동하는지 테스트
+  - 통합 테스트의 범주는 회사마다 사람마다 다름
+- Unit
+  - 기능의 개별적인 단위나 하나의 컴포넌트를 테스트
+- Static
+  - 코드 작성 레벨에서 오타와 타입에러를 확인
+  - 구문 오류, 나쁜 코드 스타일, 잘못된 API 사용 등을 Linit
+  - Prettier / typescript 등등 ..
 
 
 
+### 올바른 테스트 전략 - Redux 예시
+
+- 테스트 전략 예시: Redux에 모든 중요한 코드를 넣고 있다 그렇다면 redux만 테스트해도 안전한 앱을 만들 수 있지 않을까 ?
+
+- Redux만 테스트 하더라도 다 테스트를 하는게 아닌 단위를 나눠서 테스트 할 수 있다
 
 
 
+### 테스트 도구
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- Jest
+  - 거의 모든 기능과 플랫폼을 지원하는 JavaScript Testing Framework
+- Vitest
+  - 빠른 속도를 지향하는 단위 테스트 프레임워크 (Jest API 호환, HMR, TS, JSX, ESM 지원)
+- React Testing Library
+  - BDD 방법론에 어울리며 간결하면서도 꼭 필요한 API 지원
+  - Jest와 jsdom 기반의 브라우저 DOM Testing
+- Enzyme
+  - React Virtual DOM Testing
+- Storybook + Chromatic
+  - 컴포넌트 주도의 독립적인 개발 환경 제공
+  - 스냅샷 테스트 지원
+  - 테스트에 용이한 Addon 지원
+- Cypress, Playwright
+  - E2E or 통합 테스트
+- Flow, TypeScript
