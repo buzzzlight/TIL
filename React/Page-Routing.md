@@ -52,3 +52,37 @@
 
 > #### **React는 SPA방식을 따르면서 CSR으로 페이지를 렌더링한다.**
 
+
+
+### React Page Routing
+
+```js
+function App() {
+  return (
+    // 페이지 라우팅
+    <BrowserRouter>
+      <div className="App">
+        <h2>App.js</h2>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/new" element={<New />} />
+          <Route path="/edit" element={<Edit />} />
+          <Route path="/diary" element={<Diary />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
+}
+```
+
+- 리액트에서는 a태그로 페이지 이동을 하지 않는다 (SPA이기 때문에)
+
+- 외부페이지로 이동시킬때만 a태그를 씀
+
+- CSR 방식으로 리액트라우터를 이용해 굉장히 빠른 페이지 이동 구현
+
+- 실제로 페이지를 이동시키는거라기 보다는 페이지 역할을 하는 컴포넌트를 갈아끼우고 url도 바꿔서 마치 페이지가 이동한것처럼 보이게 만드는것 ..
+
+- 리액트앱이 제공하는 html은 index.html 하나밖에 없지만 앱컴포넌트와 앱컴포넌트 안에 있는 라우터들을 통해서 url의 경로별로 렌더링되는 컴포넌트들을 계속해서 변경해줘서 마치 페이지가 이동된것처럼 보이게 만들어주는 방식
+
+- 리액트는 이런식으로 페이지를 교체해주기때문에 페이지 전환시 깜빡임이 없고 이동속도가 매우 빨라서 쾌적하게 페이지 이동이 가능함( CSR) 
