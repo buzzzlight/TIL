@@ -1,6 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ESNext"
+    "target": "ESNext",
+    // 컴파일 후 생성되는 자바스크립트 코드의 버전 설정
+    // ESNext는 최신버전을 뜻함
+    "module": "ESNext",
+    // 생성 될 자바스크립트 모듈 시스템 설정
+    "outDir": "dist",
+    // 생성 될 자바스크립트 파일의 위치
+    "strict": false,
+    // 엄격한 타입 검사 옵션 (보통 true)
+    "moduleDetection": "force"
+    // ts파일들 모듈 분리
+  },
+  "ts-node": {
+    "esm": true
   },
   "include": ["src"]
+  // tsc 입력 시 src 폴더 안에 있는 파일들을 모두 컴파일
 }
